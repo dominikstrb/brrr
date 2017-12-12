@@ -6,7 +6,7 @@
 
 
 Have you ever wanted to know - and celebrate - when your simulations are
-finally done running in R? Have you ever been so proud of pulling of a
+finally done running in Python? Have you ever been so proud of pulling of a
 tricky bit of code that you wanted Flavor Flav to yell "yeaaahhhh,
 boi!!" as soon as it successfully completes? Have you ever gotten an
 error message that felt like DJ Khaled yelling, "They don't wanna see us
@@ -14,38 +14,33 @@ win!"
 
 Probably not, but you might now. And now, with BRRR, you can.
 
-<img src="inst/imgs/BRRR.png"/></img>
+<img src="imgs/BRRR.png"/></img>
 
 
 Installation
 ------------
 
-`BRRR` is available on Github and can be installed from within R by
-running:
+`BRRR` is available on Github and can be installed ...:
 
-    if(!require(devtools)) {install.packages(devtools)}
-    devtools::install_github("brooke-watson/BRRR")
+
 
 Requirements
 ------------
 
-If you are using Windows or OS X `BRRR` relies on the `audio` package
-for sound playback and no external program is needed.
+If you're on a Mac, `BRRR` relies on you having the `afplay` utility installed
+and on the PATH.
 
-If you're on Linux `BRRR` relies on you having either the `paplay`
-utility from the Pulse Audio system, the `aplay` utility from the ALSA
-system or [VLC media player](http://www.videolan.org/vlc/index.html)
-installed and on the PATH. Chances are that you alread have one of
-these. If you are on Debian/Ubuntu you can otherwise get VLC by running
-the following in a terminal:
+If you're on Linux `BRRR` relies on you having the `aplay` utility from the ALSA
+system installed and on the PATH.
 
-    sudo apt-get install vlc
+If you are using Windows, you're shit out of luck. Just kidding, the audio
+player associated with .wav files on your system will be used.
 
 Details
 -------
 
-Inspired by and building from Rasmus Bååth's magnificent
-[`beepr`](https://github.com/rasmusab/beepr) package, BRRR has one
+Inspired by and building from Brooke Watson's magnificent
+[`BRRR`](https://github.com/brooke-watson/BRRR/) package, BRRR has one
 function - `skrrrahh()`, which plays a rap adlib when it is called. It
 is useful if you have a script that takes a while to run, and want to be
 notified when it is finished. The package currently
@@ -55,7 +50,7 @@ Riel](http://www.lpriel.com/).
 The default sound is, appropriately, "BRRR", by Gucci Mane. The package also features two other iconic Guwop sounds: "'S GUCCI" (`skrrrahh(25)`) and "YEAAAHHH" (`skrrrahh(27)`). Gucci's glow up is a daily inspiration in 2017, and BRRR would not be icey without him.
 
 (`skrrrahh()` is spelled with three R's and two H's, according to the
-canonical [Genius.com](https://genius.com/12737380). I will not budge on
+canonical [Genius.com](https://genius.com/12737380). Just like Brooke, I will not budge on
 this.)
 
 
