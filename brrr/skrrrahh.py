@@ -1,4 +1,5 @@
 import os
+import warnings
 import random
 
 from .audio import play
@@ -61,18 +62,18 @@ PATH = 'adlibs/'
 def skrrrahh(sound=None):
     sound_path = None
 
-    if not sound:
-        sound = random.randint(0, len(sounds) - 1)
-
-    if sound in sounds.keys():
-        sound_path = os.path.join(os.path.dirname(__file__), PATH, sounds[sound])
-    elif isinstance(sound, int) and sound < len(sounds):
-        sound_path = os.path.join(os.path.dirname(__file__), PATH, list(sounds.values())[sound])
-    elif os.path.isfile(sound) and os.access(sound, os.R_OK):
-        sound_path = sound
+    if sound not in sounds.keys():
+        if isinstance(sound, int) and sound < len(sounds):
+            sound_path = os.path.join(os.path.dirname(__file__), PATH, list(sounds.values())[sound])
+        elif isinstance(sound, str) and os.path.isfile(sound) and os.access(sound, os.R_OK):
+            sound_path = sound
+        else:
+            if sound is not None:
+                warnings.warn('Sound must be either a valid sound indicator (see README), a number between 0 and {}, or a valid path to a sound file'.format(len(sounds) - 1))
+            sound = random.randint(0, len(sounds) - 1)
+            sound_path = os.path.join(os.path.dirname(__file__), PATH, list(sounds.values())[sound])
     else:
-        raise ValueError('sound must be either blabla')
+        sound_path = os.path.join(os.path.dirname(__file__), PATH, sounds[sound])
 
-    print(sound_path)
 
     play(sound_path)

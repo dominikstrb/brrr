@@ -1,5 +1,3 @@
-# TODO: adjust readme
-
 # `BRRR`
 
 ### Let Gucci Mane tell you when your script is done.
@@ -14,7 +12,7 @@ win!"
 
 Probably not, but you might now. And now, with BRRR, you can.
 
-<img src="imgs/BRRR.png"/></img>
+<img src="img/BRRR.png"/></img>
 
 
 Installation
